@@ -1,0 +1,23 @@
+<section data-ng-controller="MusicController" data-ng-init="findOne()" data-ng-show="((authentication.user) && (authentication.user._id == music.user._id))">
+	<div class="page-header">
+		<h2>♫ {{music.artist}} – {{music.title}} <span style="font-size:17px;">{{music.version}}</span> [{{music.label}}] @ www.udm-online.com ♫</h2>
+	</div>
+	<div class="pull-right">
+		
+
+		<a class="btn btn-primary" href="/#!/music/{{music._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="music.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="music.user.displayName"></span>
+		</em>
+	</small>
+</section>

@@ -1,0 +1,85 @@
+.black {color: black;}
+
+.track-container {
+	width: 100%;
+	min-height: 280px;
+	max-height: 300px;
+	margin-bottom: 20px;
+	padding-right: 8px;
+	padding-bottom: 5px;
+	padding-left: 8px;	
+	border-radius: 5px;
+	background-color: rgba(28,28,28,0.3);
+}
+
+.track-info-container {
+	padding-top: 6px;
+	text-align: center;
+}
+
+.track-info {
+	margin-top: -5px;
+}
+
+.review-container {
+	width: 100%;
+	min-height: 200px;
+	max-height: 300px;
+	margin-top: -8px;
+	margin-right: 40px;
+	margin-bottom: 20px;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	border-radius: 5px;
+	background-color: rgba(28,28,28,0.3);
+	color: #ff326c;
+	font-family: Open Sans, sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.tune-sign {
+	position: absolute;
+	right: 23px;
+    top: 0px;
+    opacity: 0.9;
+}
+.tune-pagination {
+	display: absolute;
+	margin-top: -40px;
+	font-size: 24px;
+}
+.track-pagination {
+	display: absolute;
+	margin-top: -30px;
+  	font-size: 24px;
+}
+
+.next-button {
+	cursor: pointer;
+}
+
+.track-artist {
+	color: #299BEF;
+}
+.track-title {
+	color: #72faff;
+	font-size: 20px;
+}
+.track-label {
+	font-size: 12px;
+}
+
+.search-music-box {
+	height: 40px;
+	font-family: Open Sans;
+	font-size: 19px;
+	font-weight: bold;
+	background-color: black;
+}
+
+.artist-pic {
+	cursor: pointer;
+}

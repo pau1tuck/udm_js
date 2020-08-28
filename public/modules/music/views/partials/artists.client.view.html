@@ -1,0 +1,32 @@
+<section data-ng-controller="MusicController" data-ng-init="find()">
+	<div class="tune-pagination pull-right">
+		<span class="next-button glyphicon glyphicon-chevron-left" data-ng-hide="currentPage == 0" data-ng-click="currentPage=currentPage-1"></span>{{currentPage+1}}/8
+		<span class="next-button glyphicon glyphicon-chevron-right"  data-ng-hide="currentPage == 7" data-ng-click="currentPage=currentPage+1">
+		</span>
+	</div>
+	
+	<div class="new-tunes">
+		<div class="row">
+			<div>
+				<div class="col-md-3 col-sm-6 animated zoomIn" style="margin: auto;" data-ng-repeat="track in music | filter: {status:'tune'} | limitTo:32 | orderBy:'-created' | startFrom:currentPage*4 | limitTo:4">
+					<div class="track-container">
+						<div class="tune-sign"><img src="/modules/music/img/udm-tune.png"></div>
+						<div class="track-url"><iframe width="100%" height="150px" src="{{track.url | ResourceUrl}}" frameBorder="0"></iframe></div>
+							<div class="track-info-container">
+								<p class="track-info track-title">{{track.title}}</p>
+								<p class="track-info track-version" data-ng-if="track.version.length">({{track.version}})</p>
+								<p class="track-info track-artist">{{track.artist}}</p>
+								<p class="track-info track-label small text-uppercase">{{track.label}}</span></p>
+
+							</div>
+
+					</div>
+					<div class="review-container" ng-if="track.review.length"> 
+						<p class="track-info track-review">{{track.review}}</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

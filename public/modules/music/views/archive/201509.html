@@ -1,0 +1,33 @@
+<section data-ng-controller="MusicController" data-ng-init="find()">
+<h1>September 2015</h1>
+	<div class="track-pagination pull-right">
+		<span class="next-button glyphicon glyphicon-chevron-left" data-ng-hide="currentPage == 0" data-ng-click="currentPage=currentPage-1">
+		</span> {{currentPage+1}}
+		<span class="next-button glyphicon glyphicon-chevron-right"  data-ng-hide="currentPage >= music.length/8 - 1" data-ng-click="currentPage=currentPage+1">
+		</span>
+	</div>
+
+		<br>
+
+	<div class="new-tracks">
+		<div class="row">
+			<div class="col-md-3 col-sm-6 animated zoomIn" data-ng-repeat="track in music  | filter: {year:2015, month: 09} | orderBy:'-created' | startFrom:currentPage*8 | limitTo:8">
+				<div class="track-container">
+					<div class="track-url">
+						<iframe width="100%" height="150px" src="{{track.url | ResourceUrl}}" frameBorder="0"></iframe>
+					</div>
+					<div class="track-info-container">
+						<p class="track-info track-title">{{track.title}}</p>
+						<p class="track-info track-version" data-ng-if="track.version.length">({{track.version}})</p>
+						<p class="track-info track-artist">{{track.artist}}</p>
+						<p class="track-info track-label small text-uppercase">{{track.label}}</span></p>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+</section>
+<br>
+<br>
+<br>
+

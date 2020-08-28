@@ -1,0 +1,36 @@
+<section data-ng-controller="MusicController" data-ng-init="find()">
+<h1 class="animated fadeInUpBig">Artists: {{artist}}</h1>
+	<div class="row"> <!--FILTER: | removeTunes: status  | -->
+		<div class="col-sm-12 text-center animated fadeIn">
+		<span class="artist-pic" ng-mouseover="artist='Adam Beyer'" ng-click="searchName='Adam Beyer'"><img src="modules/music/img/artists/adam-beyer.png"></span><span class="artist-pic" ng-mouseover="artist='Adrian Hour'" ng-click="searchName='Adrian Hour'"><img src="modules/music/img/artists/adrian-hour.png"></span><span class="artist-pic" ng-mouseover="artist='Alan Fitzpatrick'" ng-click="searchName='Alan Fitzpatrick'"><img src="modules/music/img/artists/alan-fitzpatrick.png"></span><span class="artist-pic" ng-mouseover="artist='Bicep & Hammer'" ng-click="searchName='Bicep & Hammer'"><img src="modules/music/img/artists/bicep-and-hammer.png"></span><span class="artist-pic" ng-mouseover="artist='Danny Nz'" ng-click="searchName='Danny Nz'"><img src="modules/music/img/artists/danny-nz.png"></span><span class="artist-pic" ng-mouseover="artist='Dave Nash'" ng-click="searchName='Dave Nash'"><img src="modules/music/img/artists/dave-nash.png"></span><span class="artist-pic" ng-mouseover="artist='Dense & Pika'" ng-click="searchName='Dense & Pika'"><img src="modules/music/img/artists/dense-and-pika.png"></span><span class="artist-pic" ng-mouseover="artist='DJ Koze'" ng-click="searchName='DJ Koze'"><img src="modules/music/img/artists/dj-koze.png"></span><span class="artist-pic" ng-mouseover="artist='Edu Imbernon'" ng-click="searchName='Edu Imbernon'"><img src="modules/music/img/artists/edu-imbernon.png"></span><span class="artist-pic" ng-mouseover="artist='Fort Romeau'" ng-click="searchName='Fort Romeau'"><img src="modules/music/img/artists/fort-romeau.png"></span><span class="artist-pic" ng-mouseover="artist='Jay Lumen'" ng-click="searchName='Jay Lumen'"><img src="modules/music/img/artists/jay-lumen.png"></span><span class="artist-pic" ng-mouseover="artist='Kidnap Kid'" ng-click="searchName='Kidnap Kid'"><img src="modules/music/img/artists/kidnap-kid.png"></span><span class="artist-pic" ng-mouseover="artist='Loco & Jam'" ng-click="searchName='Loco & Jam'"><img src="modules/music/img/artists/loco-and-jam.png"></span><span class="artist-pic" ng-mouseover="artist='Nick Curly'" ng-click="searchName='Nick Curly'"><img src="modules/music/img/artists/nick-curly.png"></span><span class="artist-pic" ng-mouseover="artist='Oscar Aguilera'" ng-click="searchName='Oscar Aguilera'"><img src="modules/music/img/artists/oscar-aguilera.png"></span><span class="artist-pic" ng-mouseover="artist='Patrice Bäumel'" ng-click="searchName='Patrice Bäumel'"><img src="modules/music/img/artists/patrice-baumel.png"></span><span class="artist-pic" ng-mouseover="artist='Sidney Charles'" ng-click="searchName='Sidney Charles'"><img src="modules/music/img/artists/sidney-charles.png"></span><span class="artist-pic" ng-mouseover="artist='Stephan Bodzin'" ng-click="searchName='Stephan Bodzin'"><img src="modules/music/img/artists/stephan-bodzin.png"></span><span class="artist-pic" ng-mouseover="artist='Tiga'" ng-click="searchName='Tiga'"><img src="modules/music/img/artists/tiga.png"></span><span class="artist-pic" ng-mouseover="artist='Tom Demac'" ng-click="searchName='Tom Demac'"><img src="modules/music/img/artists/tom-demac.png"></span><span class="artist-pic" ng-mouseover="artist='Tube & Berger'" ng-click="searchName='Tube & Berger'"><img src="modules/music/img/artists/tube-and-berger.png"></span>
+		</div>
+	</div>
+<br>
+<h2 ng-model="artist">{{searchName}}</h2>
+<br>
+	<div class="new-tracks">
+        <div class="row text-center"> <!--FILTER: | removeTunes: status  | -->
+            <div class="col-md-3 col-sm-6 animated zoomIn" ng-if="searchName.length" data-ng-repeat="track in music | filter:searchName | orderBy:['-year','-month','-created']">
+                <div class="track-container">
+                    <div class="track-url">
+                        <iframe width="100%" height="150px" src="{{track.url | ResourceUrl}}" frameBorder="0"></iframe>
+                    </div>
+                    <div class="track-info-container">
+                        <p class="track-info track-title">{{track.title}}</p>
+                        <p class="track-info track-version" data-ng-if="track.version.length">({{track.version}})</p>
+                        <p class="track-info track-artist">{{track.artist}}</p>
+                        <p class="track-info track-label small text-uppercase">{{track.label}}</span></p>
+                        <p class="track-info track-label">{{track.month}}/{{track.year}}</p>
+                        <br>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<!--
+<span><img src="modules/music/img/artists/victor-ruiz.png"></span>
+-->

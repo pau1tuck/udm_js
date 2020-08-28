@@ -1,0 +1,128 @@
+<div class="content-container" data-ng-controller="HomeController">
+	<div class="type-wrap hidden-xs">
+            <span id="typed" style="white-space:pre;"></span>
+    </div>
+
+<div class="row">
+<div class="col-md-12">
+    <div class="pull-right search-icon"><a ui-sref="searchMusic"><img src="modules/core/img/search-glass.png" style="width:40px;height:40px"></a></div>
+    </div>
+</div>
+
+<div class="row">
+            <div class="col-sm-12"">
+                <div class="todays-date">{{date | date:'EEEE, MMMM dd, y'}}</div>
+            </div>
+    </div>
+
+<div data-ng-include="'/modules/music/views/new-tunes.client.view.html'"></div>
+<br>
+	<section id="ga-bar-1">
+		<div class="row animated fadeInUpBig">
+			<div class="ga-bar-1 col-md-6 col-sm-12 text-center">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- UDM-Banner-1 -->
+                <ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px"
+                     data-ad-client="ca-pub-8968155811735767"
+                     data-ad-slot="7466551138"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+			</div>
+			<div class="ga-bar-1 col-md-6 col-sm-12 text-center">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- UDM-Banner-2 -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:468px;height:60px"
+                     data-ad-client="ca-pub-8968155811735767"
+                     data-ad-slot="1420017537"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+			</div>
+		</div>
+	</section>
+<br>
+
+
+
+
+<h1 class="animated fadeInUpBig">New Releases</h1>
+<div data-ng-include="'/modules/music/views/new-tracks.client.view.html'"></div>
+
+<br>	
+<section id="ga-leaderboard">
+    <div class="container-fluid">
+        <div class="row animated fadeInUpBig">
+            <div class="sm-hidden col-md-12 text-center">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- UDM-Leaderboard -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:970px;height:90px"
+                     data-ad-client="ca-pub-8968155811735767"
+                     data-ad-slot="7609165134"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+
+
+<div data-ng-include="'/modules/music/views/artists.client.view.html'"></div>
+
+<br>
+<br>
+<div data-ng-include="'/modules/music/views/search-music.client.view.html'"></div>
+<br>
+
+<br>
+<br>
+
+<h1 class=" pull-center text-center animated fadeInUpBig">Archive</h1>
+<div data-ng-include="'/modules/music/views/archive.client.view.html'"></div>
+
+<br>
+<br>
+<br>
+<br>
+
+<footer>
+<br>
+	<div class="row animated fadeInUpBig">
+		<div class="col-md-12 col-sm-12 text-center" style="line-height: 15px;">
+		<p><img src="modules/core/img/underground-electronica-lt-ltd.png"></p>
+			<p>© UDM · Underground Dance Music · 2016</p>
+            <br>
+		</div>
+	</div>
+</footer>
+<script>
+    $(function(){
+
+        $("#typed").typed({
+            strings: ["Delivering the finest new underground house and techno.", "Please support us by disabling your ad blocker."],
+            typeSpeed: 15,
+            backDelay: 800,
+            loop: true,
+            contentType: 'html', // or text
+            // defaults to false for infinite loop
+            loopCount: false,
+            callback: function(){ foo(); },
+            resetCallback: function() { newTyped(); }
+        });
+
+        $(".reset").click(function(){
+            $("#typed").typed('reset');
+        });
+
+    });
+
+    function newTyped(){ /* A new typed object */ }
+
+    function foo(){ console.log("Callback"); }
+
+</script>

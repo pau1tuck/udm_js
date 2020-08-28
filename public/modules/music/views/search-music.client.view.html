@@ -1,0 +1,31 @@
+<section data-ng-controller="MusicController" data-ng-init="find()">
+
+<div class="input-group">
+            <input type="text" class="form-control search-music-box" placeholder="Search UDM..." name="srch-term" ng-model="searchText">
+            <div class="input-group-btn">
+                <button class="btn btn-default search-music-button" type="submit" style="height:40px; width:50px; font-size: 20px;"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </div>
+
+<br>
+<br>
+    <div class="new-tracks">
+        <div class="row"> <!--FILTER: | removeTunes: status  | -->
+            <div ng-if="searchText.length > 2" class="col-md-3 col-sm-6 animated zoomIn" data-ng-repeat="track in music | filter:searchText | orderBy:['-year','-month','-created']">
+                <div class="track-container">
+                    <div class="track-url">
+                        <iframe width="100%" height="150px" src="{{track.url | ResourceUrl}}" frameBorder="0"></iframe>
+                    </div>
+                    <div class="track-info-container">
+                        <p class="track-info track-title">{{track.title}}</p>
+                        <p class="track-info track-version" data-ng-if="track.version.length">({{track.version}})</p>
+                        <p class="track-info track-artist">{{track.artist}}</p>
+                        <p class="track-info track-label small text-uppercase">{{track.label}}</span></p>
+                        <p class="track-info track-label">{{track.month}}/{{track.year}}</p>
+                        <br>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</section>

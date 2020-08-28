@@ -1,0 +1,83 @@
+<section data-ng-controller="MusicController" data-ng-init="findOne()">
+<div show="(authentication.user)">
+    <div data-ng-class="page-header">
+        <h1>Edit Music</h1>
+    </div>
+    <div class="col-md-12">
+        <form style="font-family:arial;" class="form-horizontal" data-ng-submit="update()" novalidate>
+            <fieldset>
+                <div style="color:black;font-weight:bold;" class="form-group">
+                    
+                    <label class="control-label" for="name">Title</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="music.title" id="title" class="form-control"required>
+                    </div>
+                    
+                    <label class="control-label" for="name">Version</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="music.version" id="version" class="form-control"   required>
+                    </div>
+                    
+                    <label class="control-label" for="name">Version</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="music.artist" id="artist" class="form-control"   required>
+                    </div>
+
+                    <label class="control-label" for="label">Label</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="music.label" id="label" class="form-control" placeholder="Label" required>
+                    </div>
+                    <label class="control-label" for="month">Month</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="music.month" id="month" class="form-control" placeholder="Month" required>
+                    </div>
+                    <label class="control-label" for="year">Year</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="music.year" id="year" class="form-control" placeholder="Year" required>
+                    </div>
+                    <label class="control-label" for="tags">Tags</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="music.tags" id="tags" class="form-control" placeholder="Tags">
+                    </div>
+                    <label class="control-label" for="host">Host</label>
+                    <div class="controls">
+                        <select data-ng-model="music.host" id="host" class="form-control" required>
+                            <option value="" disabled="disabled" selected="selected">Host</option>
+                            <option value="YouTube">YouTube</option>
+                            <option value="SoundCloud">SoundCloud</option>
+                        </select>
+                    </div>
+                    <label class="control-label" for="url">URL</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="music.url" id="url" class="form-control" placeholder="URL" required>
+                    </div>
+                    <label class="control-label" for="image">Image</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="music.image" id="image" class="form-control" placeholder="image">
+                    </div>
+                    <label class="control-label" for="status">Status</label>
+                    <div class="controls">
+                        <select data-ng-model="music.status" id="status" class="form-control">
+                            <option value="" disabled="disabled" selected="selected">Status</option>
+                            <option value=""></option>
+                            <option value="tune">Tune!</option>
+                        </select>
+                    </div>
+                    <label class="control-label" for="review">Track Review</label>
+                    <div class="controls">
+                        <textarea style="min-height:200px;" type="text" data-ng-model="music.review" id="review" class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+                
+            </fieldset>
+        </form>
+    </div>
+</div>
+</section>
