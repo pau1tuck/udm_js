@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://admin:Susandogwater7!@ds047782.mongolab.com:47782/udm',
+	db: '[...]',
 	app: {
 		title: 'udm - Development Environment'
 	},
